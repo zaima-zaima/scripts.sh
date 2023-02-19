@@ -16,7 +16,7 @@ sudo systemctl enable postfix
 
 sudo systemctl start postfix
 
-echo -e "[gitlab-ce]\nname-Gitlab CE Repository\nbaseurl=https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yumel$releasever/\ngpgcheck=0\nenabled=1 >> /etc/yum.repos.d/gitlab-ce.repo"
+echo -e "[gitlab-ce]\nname=Gitlab CE Repository\nbaseurl=https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yumel'$'releasever/\ngpgcheck=0\nenabled=1 >> /etc/yum.repos.d/gitlab-ce.repo"
 
 yum makecache
 
