@@ -16,13 +16,13 @@ sudo systemctl enable postfix
 
 sudo systemctl start postfix
 
-echo -e "[gitlab-ce]\nname=Gitlab CE Repository\nbaseurl=https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el\$releasever/\ngpgcheck=0\nenabled=1" >> /etc/yum.repos.d/gitlab-ce.repo
+# echo -e "[gitlab-ce]\nname=Gitlab CE Repository\nbaseurl=https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el\$releasever/\ngpgcheck=0\nenabled=1" >> /etc/yum.repos.d/gitlab-ce.repo
 
-yum makecache
+# yum makecache
 
-# curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash
 
-sudo yum install -y gitlab-ce
+sudo yum install -y gitlab-ee
 
 sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
 
