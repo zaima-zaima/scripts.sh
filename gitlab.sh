@@ -10,13 +10,13 @@ sudo firewall-cmd --permanent --add-service=https
 
 sudo systemctl reload firewalld
 
-sudo yum install -y postfix
+sudo yum install postfix
 
 sudo systemctl enable postfix
 
 sudo systemctl start postfix
 
-echo -e "[gitlab-ce]\nname=Gitlab CE Repository\nbaseurl=https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yumel'$'releasever/\ngpgcheck=0\nenabled=1 >> /etc/yum.repos.d/gitlab-ce.repo"
+echo "[gitlab-ce]\nname=Gitlab CE Repository\nbaseurl=https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el'\$releasever'/\ngpgcheck=0\nenabled=1" >> /etc/yum.repos.d/gitlab-ce.repo
 
 yum makecache
 
