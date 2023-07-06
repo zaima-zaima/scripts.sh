@@ -12,6 +12,10 @@ cd data
 
 mkdir backup
 
+chown timeMachine /data/backup
+
+chmod u=rwx /data/backup
+
 echo "# See smb.conf.example for a more detailed config file or
 # read the smb.conf manpage.
 # Run 'testparm' to verify the config is correct after
@@ -68,7 +72,7 @@ echo "# See smb.conf.example for a more detailed config file or
    fruit:time machine = yes
    fruit:time machine max size = 500G
    read only = no
-" >> /etc/samba/smb.conf
+" > /etc/samba/smb.conf
 
 smbpasswd -a timeMachine
 
@@ -87,6 +91,7 @@ echo "
 #     permissive - SELinux prints warnings instead of enforcing.
 #     disabled - No SELinux policy is loaded.
 SELINUX=disabled
+
 # SELINUXTYPE= can take one of three values:
 #     targeted - Targeted processes are protected,
 #     minimum - Modification of targeted policy. Only selected processes are protected. 
@@ -94,7 +99,7 @@ SELINUX=disabled
 SELINUXTYPE=targeted 
 
 
-" >> /etc/selinux/config
+" > /etc/selinux/config
 
 yum install -y cifs-utils
 
