@@ -10,7 +10,7 @@ sudo firewall-cmd --permanent --add-service=https
 
 sudo systemctl reload firewalld
 
-sudo yum install postfix
+sudo yum install -y postfix
 
 sudo systemctl enable postfix
 
